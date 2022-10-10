@@ -19,9 +19,10 @@ const Sphere = ({ x, y, z, s }) => {
   const ref = useRef()
 
   useFrame(({ clock }) => {
-    ref.current.position.x = x + Math.sin((clock.elapsedTime * s) / 2) * 0.2
-    ref.current.position.y = y + Math.sin((clock.elapsedTime * s) / 2) * 0.2
-    ref.current.position.z = z + Math.sin((clock.elapsedTime * s) / 2) * 0.2
+    const t = clock.elapsedTime
+    ref.current.position.x = x + Math.sin((t * s) / 2) * 0.2
+    ref.current.position.y = y + Math.sin((t * s) / 2) * 0.2
+    ref.current.position.z = z + Math.sin((t * s) / 2) * 0.2
   })
 
   return <MarchingCube ref={ref} />
@@ -30,9 +31,12 @@ const Sphere = ({ x, y, z, s }) => {
 const SpheresGroup = () => {
   const ref = useRef()
   useFrame(({ clock }) => {
-    ref.current.rotation.x = Math.sin(clock.elapsedTime / 2) * 0.2
-    ref.current.rotation.y = Math.sin(clock.elapsedTime / 2) * 0.2
-    ref.current.rotation.z = Math.sin(clock.elapsedTime / 2) * 0.2
+    const t = clock.elapsedTime
+    ref.current.rotation.set(
+      Math.cos(t / 2) / 1.5,
+      Math.sin(t / 2) / 1.5,
+      Math.cos(t / 1.5) / 1.5
+    )
   })
 
   const data = new Array(10).fill().map((_, i) => ({
