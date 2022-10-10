@@ -11,9 +11,9 @@ const EnvironmentComponent = () => {
           files="quarry_04_4k.hdr"
           // files="adamsbridge.hdr"
         />
-        {/* <ambientLight intensity={0.5} /> */}
-        {/* <directionalLight position={[-0.5, 1, -0.5]} intensity={0.5} /> */}
-        {/* <directionalLight position={[-1, 1, 1]} intensity={0.2} /> */}
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[-0.5, 1, -0.5]} intensity={0.5} />
+        <directionalLight position={[-1, 1, 1]} intensity={0.2} />
 
         <directionalLight
           castShadow
