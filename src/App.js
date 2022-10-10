@@ -14,6 +14,19 @@ import {
   Noise,
   Vignette,
 } from "@react-three/postprocessing"
+import * as THREE from "three"
+
+const vec = new THREE.Vector3()
+
+const Pointer = () => {
+  const ref = useRef()
+  useFrame(({ mouse, viewport }) => {
+    const { width, height } = viewport.getCurrentViewport()
+    ref.current.position.x = mouse.x * (width / 2)
+    ref.current.position.y = mouse.y * (height / 2)
+  })
+  return <MarchingCube ref={ref} color="white" />
+}
 
 const Sphere = ({ x, y, z, s }) => {
   const ref = useRef()
@@ -25,19 +38,19 @@ const Sphere = ({ x, y, z, s }) => {
     ref.current.position.z = z / 1.5 + Math.sin((t * s) / 2) * 0.2
   })
 
-  return <MarchingCube ref={ref} />
+  return <MarchingCube ref={ref} color="white" />
 }
 
 const SpheresGroup = () => {
   const ref = useRef()
-  useFrame(({ clock }) => {
-    const t = clock.elapsedTime
-    ref.current.rotation.set(
-      Math.cos(t / 2) / 1.5,
-      Math.sin(t / 2) / 1.5,
-      Math.cos(t / 1.5) / 1.5
-    )
-  })
+  // useFrame(({ clock }) => {
+  //   const t = clock.elapsedTime
+  //   ref.current.rotation.set(
+  //     Math.cos(t / 2) / 1.5,
+  //     Math.sin(t / 2) / 1.5,
+  //     Math.cos(t / 1.5) / 1.5
+  //   )
+  // })
 
   const data = new Array(10).fill().map((_, i) => ({
     x: Math.random() * 1 - 0.5,
@@ -52,6 +65,7 @@ const SpheresGroup = () => {
       {data.map((props, i) => (
         <Sphere key={i} {...props} />
       ))}
+      <Pointer />
     </MarchingCubes>
   )
 }
