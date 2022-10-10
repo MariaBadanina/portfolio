@@ -20,9 +20,9 @@ const Sphere = ({ x, y, z, s }) => {
 
   useFrame(({ clock }) => {
     const t = clock.elapsedTime
-    ref.current.position.x = x + Math.sin((t * s) / 2) * 0.2
-    ref.current.position.y = y + Math.sin((t * s) / 2) * 0.2
-    ref.current.position.z = z + Math.sin((t * s) / 2) * 0.2
+    ref.current.position.x = x / 1.5 + Math.sin((t * s) / 2) * 0.2
+    ref.current.position.y = y / 1.5 + Math.sin((t * s) / 2) * 0.2
+    ref.current.position.z = z / 1.5 + Math.sin((t * s) / 2) * 0.2
   })
 
   return <MarchingCube ref={ref} />
@@ -67,7 +67,7 @@ function App() {
           <OrbitControls />
         </Suspense>
 
-        <EffectComposer multisampling={0} disableNormalPass={true}>
+        {/* <EffectComposer multisampling={0} disableNormalPass={true}>
           <DepthOfField
             focusDistance={0}
             focalLength={0.02}
@@ -76,7 +76,7 @@ function App() {
           />
           <Noise opacity={0.25} />
           <Vignette eskil={false} offset={0.1} darkness={0.6} />
-        </EffectComposer>
+        </EffectComposer> */}
       </Canvas>
     </>
   )
