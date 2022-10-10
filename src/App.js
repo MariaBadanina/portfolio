@@ -15,6 +15,7 @@ import {
   Vignette,
 } from "@react-three/postprocessing"
 import * as THREE from "three"
+import { LayerMaterial, Depth } from "lamina"
 
 const vec = new THREE.Vector3()
 
@@ -61,7 +62,26 @@ const SpheresGroup = () => {
 
   return (
     <MarchingCubes resolution={64} enableColors ref={ref}>
-      <meshStandardMaterial vertexColors roughness={0.2} />
+      <LayerMaterial lighting="standard" color="yellow" toneMapped={true}>
+        <Depth
+          colorA="#2A8AFF"
+          colorB="#ff4eb8"
+          alpha={1}
+          mode="multiply"
+          near={0.0}
+          far={0.9}
+          origin={[0, 0, 0]}
+        />
+        {/* <Depth
+          colorA="#ff4eb8"
+          colorB="#2A8AFF"
+          alpha={1.0}
+          mode="multiply"
+          near={0.0}
+          far={0.9}
+          origin={[0, -0.25, -0.1]}
+        /> */}
+      </LayerMaterial>
       {data.map((props, i) => (
         <Sphere key={i} {...props} />
       ))}
@@ -69,19 +89,37 @@ const SpheresGroup = () => {
     </MarchingCubes>
   )
 }
+function Bg() {
+  return (
+    <mesh scale={100}>
+      <boxGeometry args={[1, 1, 1]} />
+      <LayerMaterial side={THREE.BackSide}>
+        <Depth
+          colorB="#ff4eb8"
+          colorA="#2A8AFF"
+          alpha={1}
+          mode="normal"
+          near={130}
+          far={200}
+          origin={[100, 100, -100]}
+        />
+      </LayerMaterial>
+    </mesh>
+  )
+}
 
 function App() {
   return (
     <>
-      <Canvas camera={{ position: [0, 0, 5], fov: 25, near: 1, far: 40 }}>
+      <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 5], fov: 22 }}>
         <Suspense fallback={<Html center>Loading.</Html>}>
           <SpheresGroup />
-          <Sky />
           <EnvironmentComponent />
           <OrbitControls />
         </Suspense>
+        <Bg />
 
-        {/* <EffectComposer multisampling={0} disableNormalPass={true}>
+        <EffectComposer multisampling={0} disableNormalPass={true}>
           <DepthOfField
             focusDistance={0}
             focalLength={0.02}
@@ -90,7 +128,7 @@ function App() {
           />
           <Noise opacity={0.25} />
           <Vignette eskil={false} offset={0.1} darkness={0.6} />
-        </EffectComposer> */}
+        </EffectComposer>
       </Canvas>
     </>
   )
