@@ -1,9 +1,20 @@
+import {
+  Bounds,
+  Html,
+  MarchingCube,
+  MarchingCubes,
+  OrbitControls,
+} from "@react-three/drei"
+import { Canvas, useFrame } from "@react-three/fiber"
+import { EffectComposer, Noise, Vignette } from "@react-three/postprocessing"
 import { Depth, LayerMaterial } from "lamina"
+import { Suspense, useRef } from "react"
 import * as THREE from "three"
+import EnvironmentComponent from "./EnvironmentComponent"
 
 const Bg = () => {
   return (
-    <mesh scale={4}>
+    <mesh scale={100}>
       <boxGeometry args={[1, 1, 1]} />
       <LayerMaterial side={THREE.BackSide}>
         <Depth
@@ -13,7 +24,7 @@ const Bg = () => {
           mode="normal"
           near={130}
           far={200}
-          //   origin={[1000, 1000, 1000]}
+          origin={[100, 100, -100]}
         />
       </LayerMaterial>
     </mesh>
