@@ -5,11 +5,6 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  background: rgb(255, 134, 160);
-  background: linear-gradient(
-    135deg,
-    rgba(255, 134, 160, 1) 0%,
-    rgba(255, 125, 88, 1) 49%,
-    rgba(115, 0, 127, 1) 100%
-  );
+  background: #ff86a0;
+  background: linear-gradient(135deg, #ff86a0 0%, #ff7d58 49%, #73007f 100%);
 }

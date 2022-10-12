@@ -3,17 +3,17 @@ import * as THREE from "three"
 
 const Bg = () => {
   return (
-    <mesh scale={100}>
+    <mesh scale={10}>
       <boxGeometry args={[1, 1, 1]} />
       <LayerMaterial side={THREE.BackSide}>
         <Depth
-          colorB="#ff4eb8"
-          colorA="#2A8AFF"
+          colorB="#ff7d58"
+          colorA="#73007f"
           alpha={1}
           mode="normal"
-          near={130}
-          far={200}
-          origin={[100, 100, -100]}
+          near={12}
+          far={19}
+          origin={[10, -10, -10]}
         />
       </LayerMaterial>
     </mesh>

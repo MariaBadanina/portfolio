@@ -1,6 +1,6 @@
 import { MarchingCube, MarchingCubes } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber"
-import { Depth, DebugLayerMaterial, Fresnel } from "lamina"
+import { Depth, Fresnel, LayerMaterial } from "lamina"
 import { useRef } from "react"
 import Cursor from "./Cursor"
 
@@ -27,7 +27,7 @@ const SphereGroup = () => {
 
   return (
     <MarchingCubes resolution={64} enableColors>
-      <DebugLayerMaterial lighting="standard" toneMapped={true}>
+      <LayerMaterial lighting="standard" toneMapped={true}>
         <Depth
           colorA="#b1344f"
           colorB="#e44019"
@@ -44,7 +44,7 @@ const SphereGroup = () => {
           mode="overlay"
           scale={1}
         />
-      </DebugLayerMaterial>
+      </LayerMaterial>
       {data.map((props, i) => (
         <Sphere key={i} {...props} />
       ))}
