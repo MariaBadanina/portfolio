@@ -11,7 +11,7 @@ const Bg = () => {
           colorA="#73007f"
           alpha={1}
           mode="normal"
-          near={12}
+          near={11.5}
           far={19}
           origin={[10, -10, -10]}
         />
