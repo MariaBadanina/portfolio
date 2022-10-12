@@ -5,6 +5,7 @@ import { Suspense } from "react"
 import Bg from "./components/Bg"
 import EnvironmentComponent from "./components/EnvironmentComponent"
 import SphereGroup from "./components/SphereGroup"
+import { BlendFunction } from "postprocessing"
 
 function App() {
   return (
@@ -20,9 +21,9 @@ function App() {
           </Bounds> */}
           <EnvironmentComponent />
           {/* <Bg /> */}
-          {/* <EffectComposer multisampling={0} disableNormalPass={true}>
-            <Noise opacity={0.5} />
-          </EffectComposer> */}
+          <EffectComposer multisampling={0} disableNormalPass={true}>
+            <Noise opacity={0.5} blendFunction={BlendFunction.OVERLAY} />
+          </EffectComposer>
         </Suspense>
         <OrbitControls />
       </Canvas>
