@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <Canvas camera={{ position: [0, 0, 4], fov: 22 }}>
-        <Suspense fallback={<Html center>Loading.</Html>}>
+        <Suspense fallback={<Html center>Loading............</Html>}>
           <SphereGroup />
           <EnvironmentComponent />
           <Bg />

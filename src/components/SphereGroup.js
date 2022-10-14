@@ -19,9 +19,9 @@ const Sphere = ({ x, y, z, s }) => {
 
 const SphereGroup = () => {
   const data = new Array(10).fill().map((_, i) => ({
-    x: Math.random() * 1 - 0.5,
-    y: Math.random() * 1 - 0.5,
-    z: Math.random() * 1 - 0.5,
+    x: Math.random() - 0.5,
+    y: Math.random() - 0.5,
+    z: Math.random() - 0.5,
     s: Math.random() + 2,
   }))
 
