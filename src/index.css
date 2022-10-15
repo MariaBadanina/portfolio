@@ -5,6 +5,11 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #ff86a0;
   background: linear-gradient(135deg, #ff86a0 0%, #ff7d58 49%, #73007f 100%);
+}
+html {
+  background: #ff86a0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
 }

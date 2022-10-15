@@ -27,7 +27,7 @@ function App() {
             />
           </EffectComposer>
         </Suspense>
-        <OrbitControls />
+        {/* <OrbitControls /> */}
       </Canvas>
     </>
   )
