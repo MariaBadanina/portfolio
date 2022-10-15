@@ -9,7 +9,7 @@ const Sphere = ({ x, y, z, s }) => {
 
   useFrame(({ clock }) => {
     const t = clock.elapsedTime
-    ref.current.position.x = x / 1.5 + Math.sin((t * s) / 2) * 0.2
+    ref.current.position.x = x / 1.5 + Math.cos((t * s) / 2) * 0.2
     ref.current.position.y = y / 1.5 + Math.sin((t * s) / 2) * 0.2
     ref.current.position.z = z / 1.5 + Math.sin((t * s) / 2) * 0.2
   })
