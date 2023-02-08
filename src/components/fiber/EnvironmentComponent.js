@@ -1,4 +1,4 @@
-import { Environment } from "@react-three/drei"
+import { Environment } from '@react-three/drei'
 
 const EnvironmentComponent = () => {
   return (
@@ -16,7 +16,7 @@ const EnvironmentComponent = () => {
       <directionalLight
         castShadow
         intensity={0.01}
-        args={["#ffffff"]}
+        args={['#ffffff']}
         position={[0, 100, -100]}
       />
     </group>

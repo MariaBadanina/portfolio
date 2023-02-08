@@ -1,8 +1,8 @@
-import { MarchingCube, MarchingCubes } from "@react-three/drei"
-import { useFrame } from "@react-three/fiber"
-import { Depth, Fresnel, LayerMaterial } from "lamina"
-import { useRef } from "react"
-import Cursor from "./Cursor"
+import { MarchingCube, MarchingCubes } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
+import { Depth, Fresnel, LayerMaterial } from 'lamina'
+import { useRef } from 'react'
+import Cursor from './Cursor'
 
 const Sphere = ({ x, y, z, s }) => {
   const ref = useRef()
@@ -18,7 +18,7 @@ const Sphere = ({ x, y, z, s }) => {
 }
 
 const SphereGroup = () => {
-  const data = new Array(10).fill().map((_, i) => ({
+  const data = new Array(7).fill().map((_, i) => ({
     x: Math.random() - 0.5,
     y: Math.random() - 0.5,
     z: Math.random() - 0.5,

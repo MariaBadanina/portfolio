@@ -1,5 +1,5 @@
-import { Depth, LayerMaterial } from "lamina"
-import * as THREE from "three"
+import { Depth, LayerMaterial } from 'lamina'
+import * as THREE from 'three'
 
 const Bg = () => {
   return (

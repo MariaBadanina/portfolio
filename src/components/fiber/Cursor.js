@@ -1,7 +1,7 @@
-import { MarchingCube } from "@react-three/drei"
-import { useFrame } from "@react-three/fiber"
-import { useRef, useState } from "react"
-import { useSpring, animated, config } from "@react-spring/three"
+import { MarchingCube } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
+import { useRef, useState } from 'react'
+import { useSpring, animated, config } from '@react-spring/three'
 
 const Cursor = () => {
   const [mousePosX, setMousePosX] = useState(0)

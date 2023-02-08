@@ -1,3 +1,16 @@
+@font-face {
+  font-family: 'GellaDisplayLight';
+  src: url('./static/fonts/Gella/GellaDisplayLight.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'GrafitaSpecialDEMO';
+  src: url('./static/fonts/Grafita/GrafitaSpecialDEMO.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
 html,
 body,
 #root {
@@ -6,10 +19,16 @@ body,
   margin: 0;
   padding: 0;
   background: linear-gradient(135deg, #ff86a0 0%, #ff7d58 49%, #73007f 100%);
+  font-family: 'GellaDisplayLight';
+  overscroll-behavior-y: none;
+  color: #fff;
 }
-html {
+* {
+  box-sizing: border-box;
+}
+/* html {
   background: #ff86a0;
   width: 100vw;
   height: 100vh;
   position: fixed;
-}
+} */
