@@ -23,6 +23,10 @@ body,
   overscroll-behavior-y: none;
   color: #fff;
 }
+a {
+  color: #fff;
+  text-decoration: none;
+}
 * {
   box-sizing: border-box;
 }

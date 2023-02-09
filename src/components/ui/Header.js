@@ -1,7 +1,8 @@
 import React from 'react'
-import { Melted, Moon, Sun, Drop } from './Icons'
-import MaxWidth from './MaxWidth'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { Drop, Melted, Moon, Sun } from './Icons'
+import MaxWidth from './MaxWidth'
 
 const HeaderWrapper = styled.div`
   pointer-events: auto;
@@ -31,20 +32,32 @@ const List = styled.ul`
 const ListItem = styled.li`
   margin: 0 30px;
 `
+const Logo = styled.div`
+  display: flex;
+  align-items: center;
+`
 
 const Header = () => {
   return (
     <HeaderWrapper>
       <MaxWidth justifyContent="space-between">
-        <div>
-          <Melted fill="#fff" onClick={() => console.log('Home')} />
-        </div>
+        <Logo>
+          <Link to="/">
+            <Melted fill="#fff" />
+          </Link>
+        </Logo>
         <NavWrapper>
           <Nav>
             <List>
-              <ListItem>Work</ListItem>
-              <ListItem>About</ListItem>
-              <ListItem>Contact</ListItem>
+              <ListItem>
+                <Link to="/work">Work</Link>
+              </ListItem>
+              <ListItem>
+                <Link to="/about">About</Link>
+              </ListItem>
+              <ListItem>
+                <Link to="/contact">Contact</Link>
+              </ListItem>
             </List>
           </Nav>
           <IconsWrapper>

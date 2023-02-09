@@ -1,11 +1,14 @@
-import Content from './components/ui/Content'
+import { BrowserRouter as Router } from 'react-router-dom'
 import MyCanvas from './components/fiber/MyCanvas'
+import Content from './components/ui/Content'
 
 function App() {
   return (
     <>
       <MyCanvas />
-      <Content />
+      <Router>
+        <Content />
+      </Router>
     </>
   )
 }

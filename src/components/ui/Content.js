@@ -1,15 +1,16 @@
+import { AnimatePresence, motion } from 'framer-motion'
 import React from 'react'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import Header from './Header'
 
 const StyledContainer = styled.main`
   position: fixed;
-  /* z-index: 1; */
+  z-index: 1;
   top: 0;
-  /* pointer-events: none; */
+  pointer-events: none;
   width: 100vw;
   height: 100vh;
-  overflow-y: scroll;
 `
 const HeroTextWrapper = styled.div`
   color: #fff;
@@ -17,12 +18,8 @@ const HeroTextWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* width: 100vw;
-  height: calc(100vh - 100px); */
   width: 100vw;
   height: 100vh;
-  border: 10px solid #fff;
-  /* box-sizing: border-box; */
 `
 const HeroText = styled.div`
   display: flex;
@@ -42,10 +39,32 @@ const AccentText = styled.div`
   border-bottom: 10px solid #fff;
 `
 
-const Section = () => {
+const Wrapper = styled.div`
+  border: 10px solid salmon;
+`
+
+const animation = {
+  initial: { opacity: 0, x: 100 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: -100 },
+}
+const Animated = ({ children }) => {
   return (
-    <StyledContainer>
-      <Header />
+    <motion.div
+      variants={animation}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={{ duration: 0.5 }}
+    >
+      {children}
+    </motion.div>
+  )
+}
+
+const Home = () => {
+  return (
+    <Animated>
       <HeroTextWrapper>
         <HeroText>
           <RegularText>Maria Badanina</RegularText>
@@ -56,9 +75,53 @@ const Section = () => {
           <RegularText>based in Madrid</RegularText>
         </HeroText>
       </HeroTextWrapper>
-      <HeroTextWrapper>Work</HeroTextWrapper>
-      <HeroTextWrapper>About</HeroTextWrapper>
-      <HeroTextWrapper>Contact</HeroTextWrapper>
+    </Animated>
+  )
+}
+
+function Work() {
+  return (
+    <Animated>
+      <HeroTextWrapper>
+        <Wrapper>Work</Wrapper>
+      </HeroTextWrapper>
+    </Animated>
+  )
+}
+
+function About() {
+  return (
+    <Animated>
+      <HeroTextWrapper>
+        <Wrapper>About</Wrapper>
+      </HeroTextWrapper>
+    </Animated>
+  )
+}
+
+function Contact() {
+  return (
+    <Animated>
+      <HeroTextWrapper>
+        <Wrapper>Contact</Wrapper>
+      </HeroTextWrapper>
+    </Animated>
+  )
+}
+
+const Section = () => {
+  const location = useLocation()
+  return (
+    <StyledContainer>
+      <Header />
+      <AnimatePresence mode="wait">
+        <Routes key={location.pathname} location={location}>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/work" element={<Work />} />
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/contact" element={<Contact />} />
+        </Routes>
+      </AnimatePresence>
     </StyledContainer>
   )
 }
