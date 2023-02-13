@@ -1,6 +1,7 @@
-import React from 'react'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { ThemeContext } from '../../context/theme-context'
 import { Drop, Melted, Moon, Sun } from './Icons'
 import MaxWidth from './MaxWidth'
 
@@ -21,6 +22,7 @@ const IconsWrapper = styled.div`
 const NavWrapper = styled.div`
   display: flex;
   align-items: center;
+  font-size: 20px;
 `
 const Nav = styled.nav`
   margin-right: 50px;
@@ -38,12 +40,13 @@ const Logo = styled.div`
 `
 
 const Header = () => {
+  const { setTheme } = useContext(ThemeContext)
   return (
     <HeaderWrapper>
       <MaxWidth justifyContent="space-between">
         <Logo>
           <Link to="/">
-            <Melted fill="#fff" />
+            <Melted />
           </Link>
         </Logo>
         <NavWrapper>
@@ -61,9 +64,9 @@ const Header = () => {
             </List>
           </Nav>
           <IconsWrapper>
-            <Moon fill="#fff" onClick={() => console.log('Dark')} />
-            <Sun fill="#fff" onClick={() => console.log('Light')} />
-            <Drop fill="#fff" onClick={() => console.log('Color')} />
+            <Moon onClick={() => setTheme('dark')} />
+            <Sun onClick={() => setTheme('light')} />
+            <Drop onClick={() => setTheme('color')} />
           </IconsWrapper>
         </NavWrapper>
       </MaxWidth>

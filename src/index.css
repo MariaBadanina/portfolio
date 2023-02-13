@@ -21,10 +21,8 @@ body,
   background: linear-gradient(135deg, #ff86a0 0%, #ff7d58 49%, #73007f 100%);
   font-family: 'GellaDisplayLight';
   overscroll-behavior-y: none;
-  color: #fff;
 }
 a {
-  color: #fff;
   text-decoration: none;
 }
 * {

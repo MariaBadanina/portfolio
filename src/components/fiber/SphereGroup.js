@@ -1,7 +1,8 @@
 import { MarchingCube, MarchingCubes } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { Depth, Fresnel, LayerMaterial } from 'lamina'
-import { useRef } from 'react'
+import { useContext, useRef } from 'react'
+import { ThemeContext } from '../../context/theme-context'
 import Cursor from './Cursor'
 
 const Sphere = ({ x, y, z, s }) => {
@@ -18,6 +19,7 @@ const Sphere = ({ x, y, z, s }) => {
 }
 
 const SphereGroup = () => {
+  const { themes, theme } = useContext(ThemeContext)
   const data = new Array(7).fill().map((_, i) => ({
     x: Math.random() - 0.5,
     y: Math.random() - 0.5,
@@ -29,8 +31,8 @@ const SphereGroup = () => {
     <MarchingCubes resolution={64} enableColors>
       <LayerMaterial lighting="standard" toneMapped={true}>
         <Depth
-          colorA="#b1344f"
-          colorB="#e44019"
+          colorA={themes[theme]?.sfColorA}
+          colorB={themes[theme]?.sfColorB}
           alpha={1}
           mode="normal"
           near={0.2}

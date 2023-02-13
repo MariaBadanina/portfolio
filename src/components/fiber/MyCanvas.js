@@ -20,7 +20,7 @@ const MyCanvas = () => {
       <EnvironmentComponent />
       <Bg />
       <EffectComposer multisampling={0} disableNormalPass={true}>
-        <Noise opacity={0.3} blendFunction={BlendFunction.OVERLAY} />
+        <Noise opacity={0.4} blendFunction={BlendFunction.OVERLAY} />
         <BrightnessContrast
           brightness={-0.1} // brightness. min: -1, max: 1
           contrast={0.2} // contrast: min -1, max: 1

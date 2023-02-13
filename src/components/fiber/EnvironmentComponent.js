@@ -4,10 +4,11 @@ const EnvironmentComponent = () => {
   return (
     <group>
       <Environment
-        // preset="dawn"
+        // preset="apartment" // best for the light bg ???
+        // preset="night" // best for the dark bg
+        // files="adamsbridge.hdr" // best for the dark bg
         // background={true}
-        files="quarry_04_4k.hdr"
-        // files="adamsbridge.hdr"
+        files="quarry_04_4k.hdr" // best for the color bg
       />
       <ambientLight intensity={0.5} />
       <directionalLight position={[-0.5, 1, -0.5]} intensity={0.5} />
