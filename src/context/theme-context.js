@@ -8,10 +8,10 @@ export const themes = {
     sfColorB: '#eeeeee',
   },
   dark: {
-    bgColorA: '#3d3a3a',
+    bgColorA: '#494949',
     bgColorB: '#5e5e5e',
-    sfColorA: '#282828',
-    sfColorB: '#2d2d2d',
+    sfColorA: '#3f3f3f',
+    sfColorB: '#494949',
   },
   color: {
     bgColorA: '#73007f',
