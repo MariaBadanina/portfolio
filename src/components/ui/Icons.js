@@ -9,11 +9,17 @@ const Melted = styled(MeltedIcon)`
 `
 const Moon = styled(MoonIcon)`
   cursor: pointer;
+  border: ${(p) => (p.active ? '1px solid white' : 'none')};
+  border-radius: 50%;
 `
 const Sun = styled(SunIcon)`
   cursor: pointer;
+  border: ${(p) => (p.active ? '1px solid white' : 'none')};
+  border-radius: 50%;
 `
 const Drop = styled(DropIcon)`
   cursor: pointer;
+  border: ${(p) => (p.active ? '1px solid white' : 'none')};
+  border-radius: 50%;
 `
 export { Melted, Moon, Sun, Drop }

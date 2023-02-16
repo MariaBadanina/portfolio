@@ -2,9 +2,9 @@ import React from 'react'
 
 export const themes = {
   light: {
-    bgColorA: '#ffffff',
-    bgColorB: '#eeeeee',
-    sfColorA: '#c6c6c6',
+    bgColorA: '#bababa',
+    bgColorB: '#ffffff',
+    sfColorA: '#bababa',
     sfColorB: '#eeeeee',
   },
   dark: {

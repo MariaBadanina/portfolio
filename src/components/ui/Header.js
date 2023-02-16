@@ -40,7 +40,7 @@ const Logo = styled.div`
 `
 
 const Header = () => {
-  const { setTheme } = useContext(ThemeContext)
+  const { theme, setTheme } = useContext(ThemeContext)
   return (
     <HeaderWrapper>
       <MaxWidth justifyContent="space-between">
@@ -64,9 +64,18 @@ const Header = () => {
             </List>
           </Nav>
           <IconsWrapper>
-            <Moon onClick={() => setTheme('dark')} />
-            <Sun onClick={() => setTheme('light')} />
-            <Drop onClick={() => setTheme('color')} />
+            <Moon
+              onClick={() => setTheme('dark')}
+              active={theme === 'dark' ? true : false}
+            />
+            <Sun
+              onClick={() => setTheme('light')}
+              active={theme === 'light' ? true : false}
+            />
+            <Drop
+              onClick={() => setTheme('color')}
+              active={theme === 'color' ? true : false}
+            />
           </IconsWrapper>
         </NavWrapper>
       </MaxWidth>

@@ -40,21 +40,26 @@ const About = () => {
           <Title>About</Title>
           <Text>
             <p>
-              Hello! I'm Maria, a Frontend Developer with a background in
-              graphic design, which has helped me cultivate a strong attention
-              to detail when it comes to design. With over 5 years of experience
-              in the industry, I have honed my skills in HTML, CSS, JavaScript,
-              and React.
+              Hey! I'm Maria, a Frontend Developer with a background in graphic
+              design. I have over 5 years of experience in the industry, doing
+              stuff with HTML, CSS, JavaScript, and React.
             </p>
             <p>
-              I am a kind and empathetic teammate, who values discipline,
-              perseverance, and autonomy. I have made continuous learning a part
-              of my daily routine and I understand that a great product is a
-              result of strong teamwork.
+              I am a kind, empathetic and autonomus. I'm trying to balance my
+              natural honesty and autenticity with <s>hipocricity</s>&nbsp;
+              professionalism to be able to fit in corporate world. I have made
+              continuous learning a part of my daily routine and I understand
+              that a great product is a result of strong teamwork whether I like
+              it or not (😱 escandalo 😱).
             </p>
             <p>
-              When I'm not working, you can find me reading, drawing in
-              Procreate, or improving my coding skills.
+              I am looking for "my people" and I beleve you can be productive
+              without all this bullshit.
+            </p>
+            <p>
+              When I'm not working, you can find me&nbsp;<s>scrolling TikTok</s>
+              &nbsp;reading, drawing in Procreate, improving my coding skills or
+              having existential crisis and anxitety attacks.
             </p>
             {/* <p>
               I'd love the opportunity to bring my perseverance and skills to
