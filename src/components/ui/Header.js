@@ -1,10 +1,10 @@
+import { animated, config, useSpring } from '@react-spring/web'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { ThemeContext } from '../../context/theme-context'
 import { Drop, Melted, Moon, Sun } from './Icons'
 import MaxWidth from './MaxWidth'
-import { useSpring, animated, config } from '@react-spring/web'
 
 const HeaderWrapper = styled.div`
   pointer-events: auto;
@@ -24,7 +24,6 @@ const MovingBg = styled(animated.div)`
   position: absolute;
   width: 30px;
   height: 30px;
-  background-color: #ff6d6d;
   border-radius: 100%;
   z-index: 0;
 `
@@ -39,6 +38,7 @@ const IconWrapper = styled.div`
   z-index: 1;
   position: relative;
   cursor: pointer;
+  /* border: 1px solid #fff; */
 `
 const NavWrapper = styled.div`
   display: flex;
@@ -64,9 +64,14 @@ const Logo = styled.div`
 const Header = () => {
   const { theme, setTheme } = useContext(ThemeContext)
   const springs = useSpring({
-    to: { x: theme === 'dark' ? 5 : theme === 'light' ? 45 : 85 },
+    to: {
+      x: theme === 'dark' ? 5 : theme === 'light' ? 45 : 85,
+      backgroundColor:
+        theme === 'color' ? '#fe4992' : theme === 'light' ? '#fff' : '#808080',
+    },
     config: config.wobbly,
   })
+
   return (
     <HeaderWrapper>
       <MaxWidth justifyContent="space-between">
@@ -91,23 +96,14 @@ const Header = () => {
           </Nav>
           <IconsContainer>
             <MovingBg style={springs} />
-            <IconWrapper>
-              <Moon
-                onClick={() => setTheme('dark')}
-                active={theme === 'dark' ? true : false}
-              />
+            <IconWrapper onClick={() => setTheme('dark')}>
+              <Moon />
             </IconWrapper>
-            <IconWrapper>
-              <Sun
-                onClick={() => setTheme('light')}
-                active={theme === 'light' ? true : false}
-              />
+            <IconWrapper onClick={() => setTheme('light')}>
+              <Sun />
             </IconWrapper>
-            <IconWrapper>
-              <Drop
-                onClick={() => setTheme('color')}
-                active={theme === 'color' ? true : false}
-              />
+            <IconWrapper onClick={() => setTheme('color')}>
+              <Drop />
             </IconWrapper>
           </IconsContainer>
         </NavWrapper>

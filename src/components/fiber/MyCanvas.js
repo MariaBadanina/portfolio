@@ -1,4 +1,3 @@
-import React from 'react'
 // import { Html, OrbitControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import {

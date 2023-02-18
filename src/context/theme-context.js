@@ -1,4 +1,4 @@
-import React from 'react'
+import { createContext } from 'react'
 
 export const themes = {
   light: {
@@ -21,4 +21,4 @@ export const themes = {
   },
 }
 
-export const ThemeContext = React.createContext(themes.color)
+export const ThemeContext = createContext(themes.color)

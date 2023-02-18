@@ -15,13 +15,15 @@ const StyledContainer = styled.main`
   width: 100vw;
   height: 100vh;
   color: ${(p) => (p.theme === 'light' ? '#282828' : '#fff')};
+  transition: color 0.7s ease;
   a {
     color: ${(p) => (p.theme === 'light' ? '#282828' : '#fff')};
+    transition: color 0.7s ease;
   }
-  svg * {
+  path {
     fill: ${(p) => (p.theme === 'light' ? '#282828' : '#fff')};
+    transition: fill 0.7s ease;
   }
-  transition: 1.5 ease all;
 `
 
 const animation = {

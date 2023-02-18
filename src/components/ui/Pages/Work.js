@@ -1,20 +1,19 @@
-import React from 'react'
 import styled from 'styled-components'
 import MaxWidth from '../MaxWidth'
 
 const OuterWrapper = styled.div`
-  pointer-events: all;
+  /* pointer-events: all; */
   overflow-y: scroll;
   height: 100vh;
 `
 
 const Wrapper = styled.div`
   width: 100px;
-  backdrop-filter: blur(30px);
-  border-radius: 50px;
+  /* backdrop-filter: blur(30px);
+  border-radius: 50px; */
   width: 100%;
   margin: 20vh auto;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* border: 1px solid rgba(255, 255, 255, 0.1); */
   padding: 100px;
 `
 

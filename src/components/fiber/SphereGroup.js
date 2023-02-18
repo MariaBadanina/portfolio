@@ -1,9 +1,12 @@
+import { animated, useSpring } from '@react-spring/three'
 import { MarchingCube, MarchingCubes } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { Depth, Fresnel, LayerMaterial } from 'lamina'
 import { useContext, useRef } from 'react'
 import { ThemeContext } from '../../context/theme-context'
 import Cursor from './Cursor'
+
+const AnimatedDepth = animated(Depth)
 
 const Sphere = ({ x, y, z, s }) => {
   const ref = useRef()
@@ -27,12 +30,17 @@ const SphereGroup = () => {
     s: Math.random() + 2,
   }))
 
+  const springs = useSpring({
+    colorA: themes[theme]?.sfColorA,
+    colorB: themes[theme]?.sfColorB,
+  })
+
   return (
     <MarchingCubes resolution={64} enableColors>
       <LayerMaterial lighting="standard" toneMapped={true}>
-        <Depth
-          colorA={themes[theme]?.sfColorA}
-          colorB={themes[theme]?.sfColorB}
+        <AnimatedDepth
+          colorB={springs.colorB}
+          colorA={springs.colorA}
           alpha={1}
           mode="normal"
           near={0.2}

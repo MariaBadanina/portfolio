@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 const HeroTextWrapper = styled.div`
@@ -19,12 +18,23 @@ const RegularText = styled.div`
   font-size: 20px;
 `
 const AccentText = styled.div`
+  position: relative;
   display: inline-block;
   font-family: GrafitaSpecialDEMO;
   font-size: 150px;
   line-height: 1;
   margin: 0 40px;
-  border-bottom: 10px solid ${(p) => (p.theme === 'light' ? '#282828' : '#fff')};
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    background-color: ${(p) => (p.theme === 'light' ? '#282828' : '#fff')};
+    transition: all 0.7s ease;
+    z-index: 2;
+  }
 `
 
 const Home = ({ theme }) => {
