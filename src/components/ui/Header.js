@@ -1,6 +1,6 @@
 import { animated, config, useSpring } from '@react-spring/web'
 import { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import { ThemeContext } from '../../context/theme-context'
 import { Drop, Melted, Moon, Sun } from './Icons'
@@ -20,7 +20,7 @@ const IconsContainer = styled.div`
   align-items: center;
   position: relative;
 `
-const MovingBg = styled(animated.div)`
+const SwitcherBg = styled(animated.div)`
   position: absolute;
   width: 30px;
   height: 30px;
@@ -38,22 +38,33 @@ const IconWrapper = styled.div`
   z-index: 1;
   position: relative;
   cursor: pointer;
-  /* border: 1px solid #fff; */
 `
 const NavWrapper = styled.div`
   display: flex;
   align-items: center;
   font-size: 20px;
+  overflow: hidden;
+  padding: 0 20px;
 `
 const Nav = styled.nav`
   margin-right: 50px;
+  position: relative;
+`
+const CurrentPageMarker = styled(animated.div)`
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 100%;
+  bottom: 10px;
 `
 const List = styled.ul`
   display: flex;
   list-style: none;
+  padding-inline-start: 0;
 `
 const ListItem = styled.li`
-  margin: 0 30px;
+  margin-right: 30px;
 `
 const Logo = styled.div`
   display: flex;
@@ -63,11 +74,28 @@ const Logo = styled.div`
 
 const Header = () => {
   const { theme, setTheme } = useContext(ThemeContext)
-  const springs = useSpring({
+  const location = useLocation()
+
+  const switcherAnimation = useSpring({
     to: {
       x: theme === 'dark' ? 5 : theme === 'light' ? 45 : 85,
       backgroundColor:
         theme === 'color' ? '#fe4992' : theme === 'light' ? '#fff' : '#808080',
+    },
+    config: config.wobbly,
+  })
+
+  const menuAnimation = useSpring({
+    to: {
+      x:
+        location.pathname === '/work'
+          ? 22
+          : location.pathname === '/about'
+          ? 109
+          : location.pathname === '/contact'
+          ? 210
+          : -40,
+      backgroundColor: theme === 'light' ? '#282828' : '#fff',
     },
     config: config.wobbly,
   })
@@ -82,6 +110,7 @@ const Header = () => {
         </Logo>
         <NavWrapper>
           <Nav>
+            <CurrentPageMarker style={menuAnimation} />
             <List>
               <ListItem>
                 <Link to="/work">Work</Link>
@@ -95,7 +124,7 @@ const Header = () => {
             </List>
           </Nav>
           <IconsContainer>
-            <MovingBg style={springs} />
+            <SwitcherBg style={switcherAnimation} />
             <IconWrapper onClick={() => setTheme('dark')}>
               <Moon />
             </IconWrapper>
