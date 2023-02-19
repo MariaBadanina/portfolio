@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { animated, config, useTransition } from '@react-spring/web'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import Header from './Header'
@@ -26,72 +26,31 @@ const StyledContainer = styled.main`
   }
 `
 
-const animation = {
-  initial: { opacity: 0, y: 100 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -100 },
-}
-
-const Animated = ({ children }) => {
-  return (
-    <motion.div
-      variants={animation}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={{ duration: 0.5 }}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
 const Content = ({ theme }) => {
   const location = useLocation()
+  const transitions = useTransition(location, {
+    from: { opacity: 0, y: 100 },
+    enter: { opacity: 1, y: 0 },
+    leave: { opacity: 0, y: -100 },
+    exitBeforeEnter: true,
+    config: config.gentle,
+  })
 
   return (
     <StyledContainer theme={theme}>
       <Header />
-      <AnimatePresence mode="wait">
-        <Routes key={location.pathname} location={location}>
-          <Route
-            exact
-            path="/"
-            element={
-              <Animated>
-                <Home theme={theme} />
-              </Animated>
-            }
-          />
-          <Route
-            exact
-            path="/work"
-            element={
-              <Animated>
-                <Work />
-              </Animated>
-            }
-          />
-          <Route
-            exact
-            path="/about"
-            element={
-              <Animated>
-                <About />
-              </Animated>
-            }
-          />
-          <Route
-            exact
-            path="/contact"
-            element={
-              <Animated>
-                <Contact />
-              </Animated>
-            }
-          />
-        </Routes>
-      </AnimatePresence>
+      {transitions((styles, item) => {
+        return (
+          <animated.div style={styles}>
+            <Routes location={item}>
+              <Route exact path="/" element={<Home theme={theme} />} />
+              <Route exact path="/work" element={<Work />} />
+              <Route exact path="/about" element={<About />} />
+              <Route exact path="/contact" element={<Contact />} />
+            </Routes>
+          </animated.div>
+        )
+      })}
     </StyledContainer>
   )
 }
