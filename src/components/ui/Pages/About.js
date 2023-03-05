@@ -3,7 +3,7 @@ import MaxWidth from '../MaxWidth'
 import { Link } from 'react-router-dom'
 
 const OuterWrapper = styled.div`
-  /* pointer-events: all; */
+  pointer-events: all;
   overflow-y: scroll;
   height: 100vh;
 `

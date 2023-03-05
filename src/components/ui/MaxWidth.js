@@ -7,9 +7,10 @@ const Flex = styled.div`
   justify-content: ${(p) => p.justifyContent};
   width: 100%;
   margin: 0 auto;
-  padding: ${(p) => p.px};
+  padding: 0 20px;
   @media (min-width: ${ScreenSizes.tablet}) {
     width: 688px;
+    padding: 0;
   }
   @media (min-width: ${ScreenSizes.laptop}) {
     width: 928px;
@@ -22,9 +23,9 @@ const Flex = styled.div`
   }
 `
 
-const MaxWidth = ({ justifyContent, flexDirection, children, px }) => {
+const MaxWidth = ({ justifyContent, flexDirection, children }) => {
   return (
-    <Flex justifyContent={justifyContent} flexDirection={flexDirection} px={px}>
+    <Flex justifyContent={justifyContent} flexDirection={flexDirection}>
       {children}
     </Flex>
   )
