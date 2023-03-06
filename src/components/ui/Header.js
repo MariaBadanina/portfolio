@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import { ThemeContext } from '../../context/theme-context'
-import { Drop, Melted, Moon, Sun } from './Icons'
+import { Drop, Name, Moon, Sun } from './Icons'
 import MaxWidth from './MaxWidth'
 
 const HeaderWrapper = styled.div`
@@ -105,7 +105,7 @@ const Header = () => {
       <MaxWidth justifyContent="space-between">
         <Logo>
           <Link to="/">
-            <Melted />
+            <Name />
           </Link>
         </Logo>
         <NavWrapper>
