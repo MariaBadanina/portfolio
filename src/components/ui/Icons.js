@@ -5,7 +5,10 @@ import { ReactComponent as MoonIcon } from '../../static/svg/moon.svg'
 import { ReactComponent as DropIcon } from '../../static/svg/drop.svg'
 import { ReactComponent as SunIcon } from '../../static/svg/sun.svg'
 
-const Name = styled(NameIcon)``
+const Name = styled(NameIcon)`
+  width: 90px;
+  height: 90px;
+`
 const Melted = styled(MeltedIcon)``
 const Moon = styled(MoonIcon)``
 const Sun = styled(SunIcon)``

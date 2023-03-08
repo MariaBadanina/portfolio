@@ -8,7 +8,7 @@ import MaxWidth from './MaxWidth'
 
 const HeaderWrapper = styled.div`
   pointer-events: auto;
-  height: 100px;
+  height: 130px;
   display: flex;
   align-items: center;
   /* backdrop-filter: blur(12px); */
