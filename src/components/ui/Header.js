@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import { ThemeContext } from '../../context/theme-context'
-import { Drop, Name, Moon, Sun } from './Icons'
+import { Melted, Drop, Name, Moon, Sun } from './Icons'
 import MaxWidth from './MaxWidth'
 
 const HeaderWrapper = styled.div`
@@ -67,10 +67,16 @@ const ListItem = styled.li`
   margin-right: 30px;
 `
 const Logo = styled.div`
-  display: flex;
-  align-items: center;
   cursor: pointer;
+  position: relative;
 `
+const LogoMelted = styled(Melted)`
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`
+const LogoName = styled(Name)``
 
 const Header = () => {
   const { theme, setTheme } = useContext(ThemeContext)
@@ -103,11 +109,12 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <MaxWidth justifyContent="space-between">
-        <Logo>
-          <Link to="/">
-            <Name />
-          </Link>
-        </Logo>
+        <Link to="/">
+          <Logo>
+            <LogoName />
+            <LogoMelted />
+          </Logo>
+        </Link>
         <NavWrapper>
           <Nav>
             <CurrentPageMarker style={menuAnimation} />

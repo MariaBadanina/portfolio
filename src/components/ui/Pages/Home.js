@@ -46,7 +46,7 @@ const Home = ({ theme }) => {
       </HeroText>
       <HeroText>
         <AccentText theme={theme}>developer</AccentText>
-        <RegularText>based in Madrid</RegularText>
+        <RegularText>based in Columbus GA</RegularText>
       </HeroText>
     </HeroTextWrapper>
   )

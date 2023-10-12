@@ -45,15 +45,10 @@ const About = () => {
             </p>
             <p>
               I am a kind, empathetic and autonomus. I'm trying to balance my
-              natural honesty and autenticity with <s>hipocricity</s>&nbsp;
-              professionalism to be able to fit in corporate world. I have made
-              continuous learning a part of my daily routine and I understand
-              that a great product is a result of strong teamwork whether I like
-              it or not (😱 escandalo 😱).
-            </p>
-            <p>
-              I am looking for "my people" and I beleve you can be productive
-              without all this bullshit.
+              natural honesty and autenticity with professionalism to be able to
+              fit in corporate world. I have made continuous learning a part of
+              my daily routine and I understand that a great product is a result
+              of strong teamwork whether I like it or not 🤭.
             </p>
             <p>
               When I'm not working, you can find me&nbsp;<s>scrolling TikTok</s>

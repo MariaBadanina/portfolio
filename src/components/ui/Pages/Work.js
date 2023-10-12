@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import MaxWidth from '../MaxWidth'
 import ProjectThumbnail from '../components/ProjectThumbnail'
+import { Route, Routes, useLocation } from 'react-router-dom'
 
 const OuterWrapper = styled.div`
   pointer-events: all;
@@ -32,15 +33,15 @@ const ProjectsContainer = styled.div`
 
 const projects = [
   {
-    title: 'Chrome Extention',
+    title: 'Progect Title',
     img: require('../../../static/img/1.png'),
-    tags: ['Vanilla JS', '...', '...'],
+    tags: ['Typescript', 'React.js', 'SASS', 'Next.js', '...', '...', '...'],
     pageInfo:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     url: 'project-1',
   },
   {
-    title: 'Excel clone',
+    title: 'Progect Title',
     img: require('../../../static/img/2.png'),
     tags: ['WebGL', 'Three.js', 'React-fiber', 'React-spring'],
     pageInfo:
@@ -48,7 +49,7 @@ const projects = [
     url: 'project-2',
   },
   {
-    title: 'Shader generator',
+    title: 'Progect Title',
     img: require('../../../static/img/1.png'),
     tags: ['WebGL', 'Three.js', 'React-fiber', 'React-spring'],
     pageInfo:
@@ -56,25 +57,34 @@ const projects = [
     url: 'project-3',
   },
   {
-    title: 'Excel clone',
+    title: 'Progect Title',
     img: require('../../../static/img/1.png'),
-    tags: ['Vanilla JS', 'CSS', 'Webpack', 'Node.js'],
+    tags: ['Typescript', 'React.js', 'SASS', 'Next.js', '...', '...', '...'],
     pageInfo:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     url: 'project-4',
   },
   {
-    title: 'Some stuf f',
+    title: 'Progect Title',
     img: require('../../../static/img/2.png'),
-    tags: ['Algorithms & Data Structure', 'BigO'],
+    tags: ['Typescript', 'React.js', 'SASS', 'Next.js', '...', '...', '...'],
     pageInfo:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     url: 'project-5',
   },
   {
-    title: 'Design System',
+    title: 'Progect Title',
     img: require('../../../static/img/1.png'),
-    tags: ['Storybook'],
+    tags: [
+      'Storybook',
+      'Typescript',
+      'React.js',
+      'SASS',
+      'Next.js',
+      '...',
+      '...',
+      '...',
+    ],
     pageInfo:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     url: 'project-6',
