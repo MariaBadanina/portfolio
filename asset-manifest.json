@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.3057f63f.css",
-    "main.js": "/portfolio/static/js/main.42ee82ad.js",
-    "static/media/1.png": "/portfolio/static/media/1.069197e929c49602f5c0.png",
-    "static/media/2.png": "/portfolio/static/media/2.bb4f4fe8fb7994aded46.png",
-    "static/media/GellaDisplayLight.woff2": "/portfolio/static/media/GellaDisplayLight.80f80bdf15285147147a.woff2",
-    "static/media/GrafitaSpecialDEMO.woff2": "/portfolio/static/media/GrafitaSpecialDEMO.8708900e75664a2015f2.woff2",
-    "static/media/name.svg": "/portfolio/static/media/name.19f28513734d453faa8c71d0c84d4ae4.svg",
-    "static/media/melted.svg": "/portfolio/static/media/melted.3dc386203b98978825f4e1ad5887adfb.svg",
-    "static/media/sun.svg": "/portfolio/static/media/sun.79a0023713a9d2a682509eeeb4f96bbe.svg",
-    "static/media/moon.svg": "/portfolio/static/media/moon.18cb2285daf6681226854bc4c83df7a0.svg",
-    "index.html": "/portfolio/index.html",
-    "static/media/drop.svg": "/portfolio/static/media/drop.8b2d4c0596afc179811342ebbf3e4319.svg",
-    "main.3057f63f.css.map": "/portfolio/static/css/main.3057f63f.css.map",
-    "main.42ee82ad.js.map": "/portfolio/static/js/main.42ee82ad.js.map"
+    "main.css": "/static/css/main.91c43303.css",
+    "main.js": "/static/js/main.54fb777b.js",
+    "static/media/1.png": "/static/media/1.069197e929c49602f5c0.png",
+    "static/media/2.png": "/static/media/2.bb4f4fe8fb7994aded46.png",
+    "static/media/GellaDisplayLight.woff2": "/static/media/GellaDisplayLight.80f80bdf15285147147a.woff2",
+    "static/media/GrafitaSpecialDEMO.woff2": "/static/media/GrafitaSpecialDEMO.8708900e75664a2015f2.woff2",
+    "static/media/name.svg": "/static/media/name.19f28513734d453faa8c71d0c84d4ae4.svg",
+    "static/media/melted.svg": "/static/media/melted.3dc386203b98978825f4e1ad5887adfb.svg",
+    "static/media/sun.svg": "/static/media/sun.79a0023713a9d2a682509eeeb4f96bbe.svg",
+    "static/media/moon.svg": "/static/media/moon.18cb2285daf6681226854bc4c83df7a0.svg",
+    "static/media/drop.svg": "/static/media/drop.8b2d4c0596afc179811342ebbf3e4319.svg",
+    "index.html": "/index.html",
+    "main.91c43303.css.map": "/static/css/main.91c43303.css.map",
+    "main.54fb777b.js.map": "/static/js/main.54fb777b.js.map"
   },
   "entrypoints": [
-    "static/css/main.3057f63f.css",
-    "static/js/main.42ee82ad.js"
+    "static/css/main.91c43303.css",
+    "static/js/main.54fb777b.js"
   ]
 }
