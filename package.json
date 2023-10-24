@@ -31,7 +31,7 @@
     "predeploy":"yarn build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://mariabadanina.github.io/portfolio/",
+  "homepage": "https://maria-badanina.com/",
   "eslintConfig": {
     "extends": [
       "react-app",
