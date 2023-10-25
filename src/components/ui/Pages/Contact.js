@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import MaxWidth from '../MaxWidth'
+import { Link } from 'react-router-dom'
 
 const OuterWrapper = styled.div`
   /* pointer-events: all; */
@@ -23,6 +24,11 @@ const Title = styled.h1`
 `
 const Text = styled.article`
   font-size: 25px;
+  pointer-events: all;
+`
+const StyledLink = styled(Link)`
+  display: block;
+  margin-bottom: 30px;
 `
 
 const Contact = () => {
@@ -32,9 +38,24 @@ const Contact = () => {
         <Wrapper>
           <Title>Contact</Title>
           <Text>
-            <p>LinkedIn</p>
-            <p>Github</p>
-            <p>Mail</p>
+            <StyledLink
+              to="https://www.linkedin.com/in/mariabadanina/"
+              target="_blank"
+            >
+              Linkedin
+            </StyledLink>
+            <StyledLink to="https://github.com/MariaBadanina" target="_blank">
+              GitHub
+            </StyledLink>
+            <StyledLink
+              to="https://www.instagram.com/maria__badanina/"
+              target="_blank"
+            >
+              Instagram
+            </StyledLink>
+            <StyledLink to="mailto:maria.badanina.s@gmail.com" target="_blank">
+              Mail
+            </StyledLink>
           </Text>
         </Wrapper>
       </MaxWidth>
