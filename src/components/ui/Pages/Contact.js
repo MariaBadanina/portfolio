@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 import MaxWidth from '../MaxWidth'
+import Title from '../components/Title'
+import Text from '../components/Text'
+import ScreenSizes from '../../../config/mediaVariables'
 import { Link } from 'react-router-dom'
 
 const OuterWrapper = styled.div`
@@ -11,24 +14,20 @@ const OuterWrapper = styled.div`
 const Wrapper = styled.div`
   width: 100px;
   /* backdrop-filter: blur(30px);
-  border-radius: 50px; */
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1); */
   width: 100%;
   margin: 20vh auto;
-  /* border: 1px solid rgba(255, 255, 255, 0.1); */
   padding: 100px;
 `
 
-const Title = styled.h1`
-  font-family: GrafitaSpecialDEMO;
-  font-size: 60px;
-`
-const Text = styled.article`
-  font-size: 25px;
-  pointer-events: all;
-`
 const StyledLink = styled(Link)`
   display: block;
-  margin-bottom: 30px;
+  pointer-events: all;
+  margin-bottom: 15px;
+  @media (min-width: ${ScreenSizes.tablet}) {
+    margin-bottom: 30px;
+  }
 `
 
 const Contact = () => {

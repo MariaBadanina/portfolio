@@ -1,10 +1,12 @@
 import { animated, config, useSpring } from '@react-spring/web'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import { ThemeContext } from '../../context/theme-context'
 import { Melted, Drop, Name, Moon, Sun } from './Icons'
 import MaxWidth from './MaxWidth'
+import ScreenSizes from '../../config/mediaVariables'
+import { useScreenDetector } from '../../hooks/index'
 
 const HeaderWrapper = styled.div`
   pointer-events: auto;
@@ -17,8 +19,14 @@ const HeaderWrapper = styled.div`
 `
 const IconsContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   position: relative;
+  transform: scale(0.8);
+  @media (min-width: ${ScreenSizes.tablet}) {
+    flex-direction: row;
+    transform: scale(1);
+  }
 `
 const SwitcherBg = styled(animated.div)`
   position: absolute;
@@ -42,13 +50,18 @@ const IconWrapper = styled.div`
 const NavWrapper = styled.div`
   display: flex;
   align-items: center;
-  font-size: 20px;
+  font-size: 12px;
   overflow: hidden;
   padding: 0 20px;
+  @media (min-width: ${ScreenSizes.tablet}) {
+    font-size: 20px;
+  }
 `
 const Nav = styled.nav`
-  margin-right: 50px;
   position: relative;
+  @media (min-width: ${ScreenSizes.tablet}) {
+    margin-right: 50px;
+  }
 `
 const CurrentPageMarker = styled(animated.div)`
   position: absolute;
@@ -56,7 +69,10 @@ const CurrentPageMarker = styled(animated.div)`
   height: 6px;
   background-color: #fff;
   border-radius: 100%;
-  bottom: 10px;
+  bottom: 6px;
+  @media (min-width: ${ScreenSizes.tablet}) {
+    bottom: 10px;
+  }
 `
 const List = styled.ul`
   display: flex;
@@ -65,6 +81,12 @@ const List = styled.ul`
 `
 const ListItem = styled.li`
   margin-right: 30px;
+`
+const LogoWrapper = styled(Link)`
+  transform: scale(0.7);
+  @media (min-width: ${ScreenSizes.tablet}) {
+    transform: scale(1);
+  }
 `
 const Logo = styled.div`
   cursor: pointer;
@@ -81,10 +103,12 @@ const LogoName = styled(Name)``
 const Header = () => {
   const { theme, setTheme } = useContext(ThemeContext)
   const location = useLocation()
+  const { isMobile } = useScreenDetector()
 
   const switcherAnimation = useSpring({
     to: {
-      x: theme === 'dark' ? 5 : theme === 'light' ? 45 : 85,
+      x: isMobile ? 0 : theme === 'dark' ? 5 : theme === 'light' ? 45 : 85,
+      y: isMobile ? (theme === 'dark' ? 0 : theme === 'light' ? 30 : 60) : 0,
       backgroundColor:
         theme === 'color' ? '#fe4992' : theme === 'light' ? '#fff' : '#808080',
     },
@@ -95,11 +119,17 @@ const Header = () => {
     to: {
       x:
         location.pathname === '/work'
-          ? 22
+          ? isMobile
+            ? 11
+            : 22
           : location.pathname === '/about'
-          ? 109
+          ? isMobile
+            ? 75
+            : 109
           : location.pathname === '/contact'
-          ? 210
+          ? isMobile
+            ? 146
+            : 210
           : -40,
       backgroundColor: theme === 'light' ? '#282828' : '#fff',
     },
@@ -109,12 +139,12 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <MaxWidth justifyContent="space-between">
-        <Link to="/">
+        <LogoWrapper to="/">
           <Logo>
             <LogoName />
             <LogoMelted />
           </Logo>
-        </Link>
+        </LogoWrapper>
         <NavWrapper>
           <Nav>
             <CurrentPageMarker style={menuAnimation} />

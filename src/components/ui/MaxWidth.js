@@ -7,10 +7,8 @@ const Flex = styled.div`
   justify-content: ${(p) => p.justifyContent};
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
   @media (min-width: ${ScreenSizes.tablet}) {
     width: 688px;
-    padding: 0;
   }
   @media (min-width: ${ScreenSizes.laptop}) {
     width: 928px;

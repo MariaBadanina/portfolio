@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import MaxWidth from '../MaxWidth'
+import ScreenSizes from '../../../config/mediaVariables'
 
 const HeroTextWrapper = styled.div`
   display: flex;
@@ -9,46 +11,73 @@ const HeroTextWrapper = styled.div`
   height: 100vh;
 `
 const HeroText = styled.div`
-  display: flex;
+  @media (min-width: ${ScreenSizes.tablet}) {
+    display: flex;
+  }
 `
 const RegularText = styled.div`
-  display: flex;
   align-items: center;
-  margin-top: 40px;
-  font-size: 20px;
+  font-size: 16px;
+  text-align: center;
+  margin: 45px 0 20px 0;
+  @media (min-width: ${ScreenSizes.tablet}) {
+    font-size: 20px;
+    margin: 40px 0 0 0;
+    display: flex;
+    text-align: left;
+  }
 `
 const AccentText = styled.div`
   position: relative;
   display: inline-block;
   font-family: GrafitaSpecialDEMO;
-  font-size: 150px;
   line-height: 1;
-  margin: 0 40px;
+  font-size: 70px;
+  @media (min-width: ${ScreenSizes.tablet}) {
+    font-size: 80px;
+    margin: 0 40px;
+  }
+  @media (min-width: ${ScreenSizes.laptop}) {
+    font-size: 120px;
+  }
+  @media (min-width: ${ScreenSizes.desktop}) {
+    font-size: 150px;
+  }
   &::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -5px;
     left: 0;
-    height: 10px;
+    height: 5px;
     width: 100%;
     background-color: ${(p) => (p.theme === 'light' ? '#282828' : '#fff')};
     transition: all 0.7s ease;
     z-index: 2;
+    @media (min-width: ${ScreenSizes.tablet}) {
+      height: 6px;
+      bottom: -3px;
+    }
+    @media (min-width: ${ScreenSizes.laptop}) {
+      height: 10px;
+      bottom: -10px;
+    }
   }
 `
 
 const Home = ({ theme }) => {
   return (
-    <HeroTextWrapper>
-      <HeroText>
-        <RegularText>Maria Badanina</RegularText>
-        <AccentText theme={theme}>frontend</AccentText>
-      </HeroText>
-      <HeroText>
-        <AccentText theme={theme}>developer</AccentText>
-        <RegularText>based in Columbus GA</RegularText>
-      </HeroText>
-    </HeroTextWrapper>
+    <MaxWidth>
+      <HeroTextWrapper>
+        <HeroText>
+          <RegularText>Maria Badanina</RegularText>
+          <AccentText theme={theme}>frontend</AccentText>
+        </HeroText>
+        <HeroText>
+          <AccentText theme={theme}>developer</AccentText>
+          <RegularText>based in Columbus GA</RegularText>
+        </HeroText>
+      </HeroTextWrapper>
+    </MaxWidth>
   )
 }
 

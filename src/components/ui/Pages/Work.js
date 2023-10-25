@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import MaxWidth from '../MaxWidth'
 import ProjectThumbnail from '../components/ProjectThumbnail'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import Title from '../components/Title'
+import ScreenSizes from '../../../config/mediaVariables'
 
 const OuterWrapper = styled.div`
   pointer-events: all;
@@ -10,25 +11,30 @@ const OuterWrapper = styled.div`
 `
 
 const Wrapper = styled.div`
-  /* backdrop-filter: blur(30px);
-  border-radius: 50px; */
   width: 100%;
-  margin-top: 20vh;
-  /* border: 1px solid rgba(255, 255, 255, 0.1); */
   padding: 100px;
   padding-bottom: 0;
 `
-
-const Title = styled.h1`
-  font-family: GrafitaSpecialDEMO;
-  font-size: 60px;
+const BluredContainer = styled.div`
+  margin-top: 20vh;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px);
+  border-radius: 30px;
 `
+
 const ProjectsContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   position: relative;
+  padding: 20px;
+  @media (min-width: ${ScreenSizes.tablet}) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: ${ScreenSizes.laptop}) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 `
 
 const projects = [
@@ -95,21 +101,23 @@ const Work = () => {
   return (
     <OuterWrapper>
       <MaxWidth flexDirection="column">
-        <Wrapper>
-          <Title>Work</Title>
-        </Wrapper>
-        <ProjectsContainer>
-          {projects.map((item, idx) => {
-            return (
-              <ProjectThumbnail
-                key={idx}
-                title={item.title}
-                img={item.img}
-                tags={item.tags}
-              />
-            )
-          })}
-        </ProjectsContainer>
+        <BluredContainer>
+          <Wrapper>
+            <Title>Work</Title>
+          </Wrapper>
+          <ProjectsContainer>
+            {projects.map((item, idx) => {
+              return (
+                <ProjectThumbnail
+                  key={idx}
+                  title={item.title}
+                  img={item.img}
+                  tags={item.tags}
+                />
+              )
+            })}
+          </ProjectsContainer>
+        </BluredContainer>
       </MaxWidth>
     </OuterWrapper>
   )

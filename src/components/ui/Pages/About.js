@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import MaxWidth from '../MaxWidth'
-import { Link } from 'react-router-dom'
+import Title from '../components/Title'
+import Text from '../components/Text'
+import ScreenSizes from '../../../config/mediaVariables'
 
 const OuterWrapper = styled.div`
   pointer-events: all;
@@ -15,15 +17,13 @@ const Wrapper = styled.div`
   width: 100%;
   margin-top: 20vh;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 100px;
-`
-
-const Title = styled.h1`
-  font-family: GrafitaSpecialDEMO;
-  font-size: 60px;
-`
-const Text = styled.article`
-  font-size: 25px;
+  padding: 40px;
+  @media (min-width: ${ScreenSizes.tablet}) {
+    padding: 70px;
+  }
+  @media (min-width: ${ScreenSizes.laptop}) {
+    padding: 100px;
+  }
 `
 
 const About = () => {
