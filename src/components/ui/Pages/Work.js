@@ -97,7 +97,7 @@ const projects = [
   },
 ]
 
-const Work = () => {
+const Work = ({ theme }) => {
   return (
     <OuterWrapper>
       <MaxWidth flexDirection="column">
@@ -113,6 +113,7 @@ const Work = () => {
                   title={item.title}
                   img={item.img}
                   tags={item.tags}
+                  theme={theme}
                 />
               )
             })}

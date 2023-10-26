@@ -44,7 +44,7 @@ const Content = ({ theme }) => {
           <animated.div style={styles}>
             <Routes location={item}>
               <Route exact path="/" element={<Home theme={theme} />} />
-              <Route exact path="/work" element={<Work />} />
+              <Route exact path="/work" element={<Work theme={theme} />} />
               <Route exact path="/about" element={<About />} />
               <Route exact path="/contact" element={<Contact />} />
             </Routes>

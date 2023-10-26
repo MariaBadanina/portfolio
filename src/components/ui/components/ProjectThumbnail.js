@@ -23,20 +23,25 @@ const TagContainer = styled.div`
   flex-wrap: wrap;
 `
 const Tag = styled.div`
-  border: 1px solid #fff;
+  border: 1px solid;
+  border-color: ${(p) => (p.theme === 'light' ? '#282828' : '#fff')};
   padding: 10px 20px;
   margin: 0 10px 10px 0;
   border-radius: 30px;
 `
 
-const ProjectThumbnail = ({ title, img, tags }) => {
+const ProjectThumbnail = ({ title, img, tags, theme }) => {
   return (
     <Container>
       <Img bg={img} />
       <Title>{title}</Title>
       <TagContainer>
         {tags?.map((item, idx) => {
-          return <Tag key={idx}>{item}</Tag>
+          return (
+            <Tag key={idx} theme={theme}>
+              {item}
+            </Tag>
+          )
         })}
       </TagContainer>
     </Container>
