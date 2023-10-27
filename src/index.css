@@ -4,6 +4,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'GrafitaSpecialDEMO';
   src: url('./static/fonts/Grafita/GrafitaSpecialDEMO.woff2') format('woff2');
@@ -18,16 +19,22 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #ff86a0 0%, #ff7d58 49%, #73007f 100%);
+  /* background: linear-gradient(135deg, #ff86a0 0%, #ff7d58 49%, #73007f 100%); */
+  background-image: url('../src/static/img/bg.png');
+  background-position: center;
+  background-size: cover;
   font-family: 'GellaDisplayLight';
   overscroll-behavior-y: none;
 }
+
 a {
   text-decoration: none;
 }
+
 * {
   box-sizing: border-box;
 }
+
 /* html {
   background: #ff86a0;
   width: 100vw;

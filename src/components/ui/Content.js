@@ -6,6 +6,8 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Home from './pages/Home'
 import Work from './pages/Work'
+import projects from '../../data/index'
+import Project from './pages/Project'
 
 const StyledContainer = styled.main`
   position: fixed;
@@ -47,6 +49,28 @@ const Content = ({ theme }) => {
               <Route exact path="/work" element={<Work theme={theme} />} />
               <Route exact path="/about" element={<About />} />
               <Route exact path="/contact" element={<Contact />} />
+              {projects.map((item, idx) => {
+                return (
+                  <Route
+                    key={idx}
+                    exact
+                    path={`/work/${item.url}`}
+                    element={
+                      <Project
+                        title={item.title}
+                        img={item.img}
+                        tags={item.tags}
+                        url={item.url}
+                        theme={theme}
+                        pageInfo={item.pageInfo}
+                        description={item.description}
+                        externalUrl={item.externalUrl}
+                        githubUrl={item.githubUrl}
+                      />
+                    }
+                  />
+                )
+              })}
             </Routes>
           </animated.div>
         )

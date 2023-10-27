@@ -4,21 +4,12 @@ import Title from '../components/Title'
 import Text from '../components/Text'
 import ScreenSizes from '../../../config/mediaVariables'
 import { Link } from 'react-router-dom'
+import BluredContainer from '../components/BluredContainer'
 
 const OuterWrapper = styled.div`
-  /* pointer-events: all; */
+  pointer-events: all;
   overflow-y: scroll;
   height: 100vh;
-`
-
-const Wrapper = styled.div`
-  width: 100px;
-  /* backdrop-filter: blur(30px);
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.1); */
-  width: 100%;
-  margin: 20vh auto;
-  padding: 100px;
 `
 
 const StyledLink = styled(Link)`
@@ -34,7 +25,7 @@ const Contact = () => {
   return (
     <OuterWrapper>
       <MaxWidth flexDirection="column">
-        <Wrapper>
+        <BluredContainer>
           <Title>Contact</Title>
           <Text>
             <StyledLink
@@ -56,7 +47,7 @@ const Contact = () => {
               Mail
             </StyledLink>
           </Text>
-        </Wrapper>
+        </BluredContainer>
       </MaxWidth>
     </OuterWrapper>
   )

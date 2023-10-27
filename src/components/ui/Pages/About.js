@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import MaxWidth from '../MaxWidth'
-import Title from '../components/Title'
+import BluredContainer from '../components/BluredContainer'
 import Text from '../components/Text'
-import ScreenSizes from '../../../config/mediaVariables'
+import Title from '../components/Title'
 
 const OuterWrapper = styled.div`
   pointer-events: all;
@@ -10,27 +10,11 @@ const OuterWrapper = styled.div`
   height: 100vh;
 `
 
-const Wrapper = styled.div`
-  width: 100px;
-  backdrop-filter: blur(30px);
-  border-radius: 30px;
-  width: 100%;
-  margin-top: 20vh;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 40px;
-  @media (min-width: ${ScreenSizes.tablet}) {
-    padding: 70px;
-  }
-  @media (min-width: ${ScreenSizes.laptop}) {
-    padding: 100px;
-  }
-`
-
 const About = () => {
   return (
     <OuterWrapper>
       <MaxWidth flexDirection="column">
-        <Wrapper>
+        <BluredContainer>
           <Title>About</Title>
           <Text>
             <p>
@@ -53,10 +37,10 @@ const About = () => {
             <p>
               I'm excited about the chance to use my skills perseverance and
               passion for your project and create something that exceeds your
-              expectations. Let's team up and make great things happen!"
+              expectations. Let's team up and make great things happen!
             </p>
           </Text>
-        </Wrapper>
+        </BluredContainer>
       </MaxWidth>
     </OuterWrapper>
   )
