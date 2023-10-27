@@ -13,14 +13,6 @@ const projects = [
 
 This task demanded a deep understanding of how these components would interact and adapt to various scenarios while preserving the brand's visual identity.`,
   },
-  {
-    title: 'Project Title 2',
-    img: require('../static/img/2.png'),
-    tags: ['WebGL', 'Three.js', 'React-fiber', 'React-spring'],
-    pageInfo:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    url: 'project-2',
-  },
 ]
 
 export default projects
