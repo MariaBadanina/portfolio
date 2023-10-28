@@ -35,7 +35,7 @@ const About = () => {
               and let's not forget those occasional existential moments.
             </p>
             <p>
-              I'm excited about the chance to use my skills perseverance and
+              I'm excited about the chance to use my skills with perseverance and
               passion for your project and create something that exceeds your
               expectations. Let's team up and make great things happen!
             </p>
