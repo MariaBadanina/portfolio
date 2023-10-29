@@ -1,4 +1,4 @@
-import { BrowserRouter as Router } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import MyCanvas from './components/fiber/MyCanvas'
 import Content from './components/ui/Content'
 import { ThemeContext, themes } from './context/theme-context'
@@ -19,9 +19,9 @@ function App() {
       <CanvasWrapper theme={theme}>
         <MyCanvas />
       </CanvasWrapper>
-      <Router>
+      <HashRouter basename="/">
         <Content theme={theme} />
-      </Router>
+      </HashRouter>
     </ThemeContext.Provider>
   )
 }
